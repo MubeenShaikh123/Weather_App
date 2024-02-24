@@ -36,7 +36,7 @@ function App() {
   }, [search]);
 
   return (
-    <div className="main  accordion container-fluid">
+    <div className="main container-fluid">
       <Form setSearch={setSearch}></Form>
       <Weather setUnit={setUnit} error={error} city={city} unit={unit}></Weather>
     </div>
