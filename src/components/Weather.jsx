@@ -61,12 +61,12 @@ export default function Weather(props) {
         ) :
             <div className="row d-flex justify-content-center  align-items-center ">
                 <div className="card_div  ">
-                    <h1 className="pt-1">{city.name}</h1>
-                    <h1 className="pt-1 ">
+                    <h1 className="pt-2">{city.name}</h1>
+                    <h1 className="pt-2 ">
                         <i className={`wi ${weathericon} display-1 `}></i>
                     </h1>
-                    <h3 className="py-1   ">{city.weather[0].main}</h3>
-                    <div className="d-flex pt-2 w-50 justify-content-evenly ">
+                    <h3 className="py-2   ">{city.weather[0].main}</h3>
+                    <div className="d-flex pt-3 w-50 justify-content-evenly ">
                         <div className="checkbox ">
                             <input
                                 type="radio"
@@ -89,15 +89,15 @@ export default function Weather(props) {
                             <label htmlFor="kelvin">Kel</label>
                         </div>
                     </div>
-                    <div className="temp pt-3 ">
+                    <div className="temp pt-4 ">
                         <h3>Temp : {temp}</h3>
                     </div>
                     <div className="container">
-                        <div className="row d-flex justify-content-center    minmax pt-2 ">
-                            <div className="col-12 col-md-6">
+                        <div className="row d-flex justify-content-center minmax pt-3 ">
+                            <div className="col-12 col-md-6 pb-3 pb-md-0 ">
                                 <h4>Wind Speed : {`${city.wind.speed} m/s`}</h4>
                             </div>
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-6 pb-3 pb-md-0 ">
                                 <h4>Humidity : {`${city.main.humidity} %`}</h4>
                             </div>
                         </div>
