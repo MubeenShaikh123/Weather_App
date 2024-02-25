@@ -33,7 +33,6 @@ export default function Weather(props) {
             default:
                 setWeathericon("wi-day-sunny")
         }
-        console.log(weathericon)
     }
 
     useEffect(() => {

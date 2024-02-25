@@ -11,11 +11,10 @@ function App() {
   const [unit, setUnit] = useState("degree");
 
   useEffect(() => {
-    const API_key = 'bd2864ad83d2c791d0044186dcf6a292';
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_key}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${import.meta.env.VITE_API_KEY}`
         );
 
         if (!response.ok) {
