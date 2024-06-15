@@ -1,7 +1,7 @@
 export default function Form(props) {
     const debounceSearch = props.debounceSearch;
     return (
-        <form className='pt-3 pb-2'>
+        <form className='pt-5 sm:pt-3 pb-2'>
             <div className="container mx-auto">
                 <div className="flex justify-center">
                     <input

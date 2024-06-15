@@ -9,7 +9,6 @@ function App() {
   const [unit, setUnit] = useState("degree");
   const timeout = useRef(null)
   const fetchData = async (searchQuery) => {
-    console.log("fetch called")
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${import.meta.env.VITE_API_KEY}`
@@ -32,7 +31,7 @@ function App() {
     clearTimeout(timeout.current);
     timeout.current = setTimeout(() => {
       fetchData(searchQuery);
-    }, 1000)
+    }, 700)
   }
 
   useEffect(() => {
@@ -40,7 +39,7 @@ function App() {
   }, []);
 
   return (
-    <div className=" w-full sm:w-2/3 h-screen sm:h-4/5 flex flex-col items-center justify-center text-center text-whitesmoke bg-slate-700 bg-opacity-25 shadow-lg backdrop-blur-4 border border-white border-opacity-20 rounded-lg p-4
+    <div className=" w-full sm:w-2/3 h-screen sm:h-4/5 flex flex-col mt-0 justify-start sm:justify-center text-center text-whitesmoke bg-slate-700 bg-opacity-25 shadow-lg backdrop-blur-4 border border-white border-opacity-20 rounded-lg p-4
     ">
       <Form debounceSearch={debounceSearch} />
       <Weather setUnit={setUnit} error={error} city={city} unit={unit} />
