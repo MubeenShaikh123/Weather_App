@@ -1,13 +1,13 @@
 import Weather from './components/Weather';
 import Form from './components/Form';
-import { useState,useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 function App() {
   const [city, setCity] = useState(null);
   const [error, setError] = useState(true);
   const [unit, setUnit] = useState("degree");
-  const timeout=useRef(null)
+  const timeout = useRef(null)
   const fetchData = async (searchQuery) => {
     console.log("fetch called")
     try {
@@ -28,21 +28,22 @@ function App() {
     }
   };
 
-  const debounceSearch=(searchQuery)=>{
+  const debounceSearch = (searchQuery) => {
     clearTimeout(timeout.current);
-    timeout.current=setTimeout(()=>{
+    timeout.current = setTimeout(() => {
       fetchData(searchQuery);
-    },1000)
+    }, 1000)
   }
 
   useEffect(() => {
     fetchData('mumbai');
-  },[]);
+  }, []);
 
   return (
-    <div className="main container-fluid">
-      <Form debounceSearch={debounceSearch}></Form>
-      <Weather setUnit={setUnit} error={error} city={city} unit={unit}></Weather>
+    <div className=" w-full sm:w-2/3 h-screen sm:h-4/5 flex flex-col items-center justify-center text-center text-whitesmoke bg-slate-700 bg-opacity-25 shadow-lg backdrop-blur-4 border border-white border-opacity-20 rounded-lg p-4
+    ">
+      <Form debounceSearch={debounceSearch} />
+      <Weather setUnit={setUnit} error={error} city={city} unit={unit} />
     </div>
   );
 }
